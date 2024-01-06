@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://32xma15jjs3t"]
+
+[ext_resource type="PackedScene" uid="uid://mknue0twco0c" path="res://Assets/LoafbrrAssets/HouseAndPropsPack/Scenes/HouseAndPropsAssetPack.tscn" id="1_a33yl"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PrefabScenes/player.tscn" id="2_wmdhd"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/InventoryPD.gd" id="3_j1lbo"]
+[ext_resource type="PackedScene" uid="uid://0c32kepv0ahx" path="res://COGITO/PrefabScenes/Player_HUD.tscn" id="4_lx6aa"]
+[ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://COGITO/EasyMenus/Scenes/pause_menu.tscn" id="5_a37ia"]
+
+[sub_resource type="Resource" id="Resource_i7wr3"]
+resource_local_to_scene = true
+script = ExtResource("3_j1lbo")
+inventory_slots = Array[Resource("res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd")]([null, null, null, null, null, null, null, null])
+
+[node name="Houses" type="Node3D"]
+
+[node name="HouseAndPropsAssetPack" parent="." instance=ExtResource("1_a33yl")]
+
+[node name="Player" parent="." instance=ExtResource("2_wmdhd")]
+pause_menu = NodePath("../PauseMenu")
+player_hud = NodePath("../Player_HUD")
+inventory_data = SubResource("Resource_i7wr3")
+
+[node name="Player_HUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_lx6aa")]
+player = NodePath("../Player")
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_a37ia")]
+
+[connection signal="resume" from="PauseMenu" to="Player" method="_on_pause_menu_resume"]
