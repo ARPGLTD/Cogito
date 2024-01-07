@@ -262,7 +262,7 @@ surface_material_override/0 = ExtResource("24_tbpgm")
 surface_material_override/0 = ExtResource("24_tbpgm")
 
 [node name="Door_Double_Normal_1_holder2" parent="Houses/House_5" instance=ExtResource("14_vs02c")]
-transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -0.0124207, 2, 4.9938)
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0, 2, 4.994)
 
 [node name="Door_Double_Normal_1_holder3" parent="Houses/House_5" instance=ExtResource("14_vs02c")]
 transform = Transform3D(1, 0, 1.7683e-07, 0, 1, 0, -1.7683e-07, 0, 1, -0.00214005, 6, 2.98092)

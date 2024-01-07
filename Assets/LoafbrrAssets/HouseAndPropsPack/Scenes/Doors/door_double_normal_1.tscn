@@ -100,8 +100,35 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_ig64w"]
+[sub_resource type="Animation" id="Animation_jum2q"]
 resource_name = "open_inward"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Double_Normal_1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.48353, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Double_Normal_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.48353, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ig64w"]
+resource_name = "open_outward"
 step = 0.0625
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -128,54 +155,27 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_jum2q"]
-resource_name = "open_outward"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Door_Double_Normal_1:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Door_Double_Normal_2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4augl"]
 _data = {
 "RESET": SubResource("Animation_wmmnx"),
-"open_inward": SubResource("Animation_ig64w"),
-"open_outward": SubResource("Animation_jum2q")
+"open_inward": SubResource("Animation_jum2q"),
+"open_outward": SubResource("Animation_ig64w")
 }
 
 [node name="Door_Double_Normal_1_holder" type="Node3D"]
 script = ExtResource("1_qm7pa")
 
-[node name="OutsideArea3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.006)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276229, 1.16369, 0.557014)
-shape = SubResource("BoxShape3D_0brpe")
-
 [node name="InsideArea3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.006)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InsideArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276229, 1.16369, 0.557014)
+shape = SubResource("BoxShape3D_0brpe")
+
+[node name="OutsideArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.006)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideArea3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0276229, 1.16369, -0.990594)
 shape = SubResource("BoxShape3D_0brpe")
 
@@ -208,8 +208,8 @@ libraries = {
 "": SubResource("AnimationLibrary_4augl")
 }
 
-[connection signal="body_entered" from="OutsideArea3D" to="." method="_on_outside_area_3d_body_entered"]
-[connection signal="body_exited" from="OutsideArea3D" to="." method="_on_outside_area_3d_body_exited"]
 [connection signal="body_entered" from="InsideArea3D" to="." method="_on_inside_area_3d_body_entered"]
 [connection signal="body_exited" from="InsideArea3D" to="." method="_on_inside_area_3d_body_exited"]
+[connection signal="body_entered" from="OutsideArea3D" to="." method="_on_outside_area_3d_body_entered"]
+[connection signal="body_exited" from="OutsideArea3D" to="." method="_on_outside_area_3d_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
