@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://32xma15jjs3t"]
+[gd_scene load_steps=7 format=3 uid="uid://cvsjoy0se8bje"]
 
 [ext_resource type="PackedScene" uid="uid://mknue0twco0c" path="res://Assets/LoafbrrAssets/HouseAndPropsPack/Scenes/HouseAndPropsAssetPack.tscn" id="1_a33yl"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PrefabScenes/player.tscn" id="2_wmdhd"]
