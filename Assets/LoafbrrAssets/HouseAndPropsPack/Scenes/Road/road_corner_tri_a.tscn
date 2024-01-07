@@ -5,11 +5,12 @@
 [sub_resource type="ArrayMesh" id="ArrayMesh_w0cix"]
 _surfaces = [{
 "aabb": AABB(-2, 0, -2, 4, 1e-05, 4.00002),
-"format": 4097,
+"format": 34359742465,
 "index_count": 3,
 "index_data": PackedByteArray(1, 0, 2, 0, 0, 0),
 "name": "Road",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 3,
 "vertex_data": PackedByteArray(218, 255, 255, 191, 0, 0, 0, 0, 19, 0, 0, 64, 19, 0, 0, 192, 0, 0, 0, 0, 218, 255, 255, 191, 218, 255, 255, 63, 0, 0, 0, 0, 19, 0, 0, 192)
 }]
@@ -20,14 +21,15 @@ resource_name = "HouseAndPropsAssetPack_Road_Corner_Tri_A"
 _surfaces = [{
 "aabb": AABB(-2, 0, -2, 4, 1e-05, 4.00002),
 "attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0),
-"format": 4119,
+"format": 34359742487,
 "index_count": 3,
 "index_data": PackedByteArray(1, 0, 2, 0, 0, 0),
 "material": ExtResource("1_p1eig"),
 "name": "Road",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 3,
-"vertex_data": PackedByteArray(218, 255, 255, 191, 0, 0, 0, 0, 19, 0, 0, 64, 255, 127, 255, 255, 255, 255, 255, 191, 19, 0, 0, 192, 0, 0, 0, 0, 218, 255, 255, 191, 255, 127, 255, 255, 255, 255, 255, 191, 218, 255, 255, 63, 0, 0, 0, 0, 19, 0, 0, 192, 255, 127, 255, 255, 255, 255, 255, 191)
+"vertex_data": PackedByteArray(218, 255, 255, 191, 0, 0, 0, 0, 19, 0, 0, 64, 19, 0, 0, 192, 0, 0, 0, 0, 218, 255, 255, 191, 218, 255, 255, 63, 0, 0, 0, 0, 19, 0, 0, 192, 255, 127, 255, 255, 255, 255, 255, 191, 255, 127, 255, 255, 255, 255, 255, 191, 255, 127, 255, 255, 255, 255, 255, 191)
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w0cix")
