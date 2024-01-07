@@ -16,6 +16,7 @@ inventory_slots = Array[Resource("res://COGITO/InventoryPD/CustomResources/Inven
 [node name="HouseAndPropsAssetPack" parent="." instance=ExtResource("1_a33yl")]
 
 [node name="Player" parent="." instance=ExtResource("2_wmdhd")]
+transform = Transform3D(-0.624561, 0, 0.780976, 0, 1, 0, -0.780976, 0, -0.624561, -60, 0.8, -35)
 pause_menu = NodePath("../PauseMenu")
 player_hud = NodePath("../Player_HUD")
 inventory_data = SubResource("Resource_i7wr3")
