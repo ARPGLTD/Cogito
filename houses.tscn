@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvsjoy0se8bje"]
+[gd_scene load_steps=11 format=3 uid="uid://cvsjoy0se8bje"]
 
 [ext_resource type="PackedScene" uid="uid://mknue0twco0c" path="res://Assets/LoafbrrAssets/HouseAndPropsPack/Scenes/HouseAndPropsAssetPack.tscn" id="1_a33yl"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PrefabScenes/player.tscn" id="2_wmdhd"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/InventoryPD.gd" id="3_j1lbo"]
 [ext_resource type="PackedScene" uid="uid://0c32kepv0ahx" path="res://COGITO/PrefabScenes/Player_HUD.tscn" id="4_lx6aa"]
 [ext_resource type="PackedScene" uid="uid://rw7gdui8lu3n" path="res://COGITO/EasyMenus/Scenes/pause_menu.tscn" id="5_a37ia"]
+[ext_resource type="PackedScene" uid="uid://b26f6tlhrrig1" path="res://Assets/LoafbrrAssets/HouseAndPropsPack/Scenes/Props/props_table_circle_1.tscn" id="6_xd2y4"]
+[ext_resource type="Script" path="res://RoundTable.gd" id="7_uh81u"]
+[ext_resource type="AudioStream" uid="uid://cqgsihtcw0gl4" path="res://COGITO/Assets/Audio/Kenney/UiAudio/rollover1.ogg" id="8_ecqf1"]
+[ext_resource type="AudioStream" uid="uid://1w0db1u6lv7t" path="res://COGITO/Assets/Audio/Kenney/UiAudio/rollover6.ogg" id="9_3f5j8"]
 
 [sub_resource type="Resource" id="Resource_i7wr3"]
 resource_local_to_scene = true
@@ -25,3 +29,11 @@ inventory_data = SubResource("Resource_i7wr3")
 player = NodePath("../Player")
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_a37ia")]
+
+[node name="RoundTable" parent="." instance=ExtResource("6_xd2y4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9718, 0.639977, -14.2597)
+script = ExtResource("7_uh81u")
+pick_up_sound = ExtResource("8_ecqf1")
+drop_sound = ExtResource("9_3f5j8")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="RoundTable"]
